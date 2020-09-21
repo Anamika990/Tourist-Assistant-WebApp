@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - Tourist Assistant</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="/Content/css/linearicons.css">
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="/Content/css/magnific-popup.css">
+    <link rel="stylesheet" href="/Content/css/jquery-ui.css">
+    <link rel="stylesheet" href="/Content/css/nice-select.css">
+    <link rel="stylesheet" href="/Content/css/animate.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.carousel.css">
+    <link rel="stylesheet" href="/Content/css/main.css">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <style>
+          .back {
+            background-image: url(/logform/images/backg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" @*style="background-color:black"*@>
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-6 col-6 header-top-left">
+
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-6 header-top-right">
+                        <div class="header-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="HomePage.aspx"><b><i style="font-size: 18px;">Tourist Assistant</i></b></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "Index", "Home")</li>
+
+                        <li class="menu-has-children">
+                        <li>@Html.ActionLink("Destination", "Index", "Home")</li>
+                        <ul>
+                            <li><a href="blog-home.html">Dhaka</a></li>
+                            <li><a href="blog-single.html">Chittagong</a></li>
+                            <li><a href="blog-single.html">Barisal</a></li>
+                            <li><a href="blog-single.html">Khulna</a></li>
+                            <li><a href="blog-single.html">Sylhet</a></li>
+                            <li><a href="blog-single.html">Mymensingh</a></li>
+                            <li><a href="blog-single.html">Rangpur</a></li>
+                            <li><a href="blog-single.html">Rajshahi</a></li>
+                        </ul>
+                        </li>
+                        <li class="menu-has-children">
+                            <a href="#">Tourist Group</a>
+                            <ul>
+                                <li><a href="blog-home.html">Travels of Bangladesh</a></li>
+                                <li><a href="blog-single.html">Easy Travels</a></li>
+                                <li><a href="blog-single.html">Leady Traveler</a></li>
+                                <li><a href="blog-single.html">Travels BD</a></li>
+                                <li><a href="blog-single.html">Chuti Travel</a></li>
+                                <li><a href="blog-single.html">Tourist BD</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="menu-has-children">
+                            <a href="">Services</a>
+                            <ul>
+                                <li><a href="elements.html">Individual Guide</a></li>
+                                <li class="menu-has-children">
+                                    <a href="">Packages</a>
+                                    <ul>
+                                        <li><a href="#">Holiday</a></li>
+                                        <li><a href="#">General</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Contract", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Sign In", "LoginForm", "Home")</li>
+
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+
+
+    <footer class="footer-area section-gap">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>About Agency</h6>
+                        <p>
+                            The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at visit, presentation and understand the message. It has come to a point
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Navigation Links</h6>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Feature</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Tourist Group</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Package</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Newsletter</h6>
+                        <p>
+                            For business professionals caught between high OEM price and mediocre print and graphic output.
+                        </p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+                                <div class="input-group d-flex flex-row">
+                                    <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                    <button class="btn bb-btn"><span class="lnr lnr-location"></span></button>
+                                </div>
+                                <div class="mt-10 info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                <p class="col-lg-8 col-sm-12 footer-text m-0">
+                    This Web site is made by Anamika  .
+                </p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/logform/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/logform/vendor/bootstrap/js/popper.js"></script>
+    <script src="/logform/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/logform/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/logform/vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <script src="logform/js/main.js"></script>
+
+    <!--===============================================================================================-->
+
+
+    <script src="/Content/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="/Content/js/popper.min.js"></script>
+    <script src="/Content/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="/Content/js/jquery-ui.js"></script>
+    <script src="/Content/js/easing.min.js"></script>
+    <script src="/Content/js/hoverIntent.js"></script>
+    <script src="/Content/js/superfish.min.js"></script>
+    <script src="/Content/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/Content/js/jquery.magnific-popup.min.js"></script>
+    <script src="/Content/js/jquery.nice-select.min.js"></script>
+    <script src="/Content/js/owl.carousel.min.js"></script>
+    <script src="/Content/js/mail-script.js"></script>
+    <script src="/Content/js/main.js"></script>
+
+
+    <!--===============================================================================================-->
+
+
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

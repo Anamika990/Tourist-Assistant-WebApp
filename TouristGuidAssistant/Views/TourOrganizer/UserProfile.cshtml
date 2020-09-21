@@ -1,0 +1,240 @@
+﻿@model IEnumerable<TouristGuidAssistant.Models.BookingInfo>
+@{
+    ViewBag.Title = "TourOrganizerProfile";
+    Layout = "~/Views/Shared/_TourOrganizerLayout.cshtml";
+}
+
+<header id="header" @*style="background-color:black"*@>
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-6 col-6 header-top-left">
+
+                </div>
+                <div class="col-lg-6 col-sm-6 col-6 header-top-right">
+                    <div class="header-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-menu">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <a href="HomePage.aspx"><b><i style="font-size: 18px;">Travel Guide</i></b></a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li>@Html.ActionLink("Home", "UserProfile", "TourOrganizer")</li>
+                    <li>@Html.ActionLink("Create Event", "EventCreate", "TourOrganizer")</li>
+                    <li>@Html.ActionLink("Help", "Help", "TourOrganizer")</li>
+                    <li>@Html.ActionLink("Signout", "Signout", "Home")</li>
+
+
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header>
+
+<section>
+    <div style="background-image: url(/Content/img/slider3.jpg);
+        padding: 100px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+">
+
+    </div>
+</section>
+<br />
+<br />
+<section class="ftco-section contact-section ftco-no-pb container" id="contact-section">
+    <h3>Booking Travelar Infornation</h3>
+    <table class="table  table-hover">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TravelarGroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationTo)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.TravelarGroupName == ViewBag.groupName)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TravelarGroupName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DestinationForm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DestinationTo)
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</section>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+@*Tour Organizer Profile*@
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2 class="mb-4"> @ViewBag.name 's Profile</h2>
+            </div>
+        </div>
+
+        <div class="row no-gutters block-9">
+            <div class="col-md-6 order-md-last d-flex" style="color:black;font-size:20px;">
+                <div>
+                    <img src="@ViewBag.image" height="320" width="300" /> 
+                </div>
+                <form action="#" class="bg-light p-4 p-md-5 contact-form">
+                    <div class="form-group">
+                        Name: @ViewBag.name
+                    </div>
+                    <div class="form-group">
+                        Email: @ViewBag.email
+                    </div>
+                    <div class="form-group">
+                        phone: @ViewBag.phone
+                    </div>
+                    <div class="form-group">
+                        NID: @ViewBag.nid
+                    </div>
+                    <div class="form-group">
+                        Group Name: @ViewBag.groupName
+                    </div>
+                    <div class="form-group">
+                        <input value="Edit Profile" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+
+            </div>
+
+         
+        </div>
+    </div>
+</section>
+<br>
+
+<footer class="footer-area section-gap">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>About Agency</h6>
+                    <p>
+                        The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at visit, presentation and understand the message. It has come to a point
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>Navigation Links</h6>
+                    <div class="row">
+                        <div class="col">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li><a href="#">Tourist Group</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>Newsletter</h6>
+                    <p>
+                        For business professionals caught between high OEM price and mediocre print and graphic output.
+                    </p>
+                    <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+                            <div class="input-group d-flex flex-row">
+                                <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                <button class="btn bb-btn"><span class="lnr lnr-location"></span></button>
+                            </div>
+                            <div class="mt-10 info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer-bottom d-flex justify-content-between align-items-center">
+
+            <div class="col-lg-4 col-sm-12 footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+

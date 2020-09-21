@@ -1,0 +1,172 @@
+﻿@model TouristGuidAssistant.Models.Users
+@using Vereyon.Web
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="back">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+
+        <div class="card bg-light" style="width:950px;border-radius:10px">
+
+
+            @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                @Html.RenderFlashMessages()
+                <article class="card-body mx-auto" style="max-width: 500px;">
+                    <br /> <br /><br />
+                    
+
+                    <form method="post">
+                        <span class="login100-form-title" >
+                            User Registration
+                        </span>
+
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input name="UserName" class="form-control" placeholder="User Name" type="text" required>
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            </div>
+                            <input name="Email" class="form-control" placeholder="Email " type="email" required>
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                            </div>
+                            <input name="Phone" class="form-control" placeholder="Phone number" type="text" required>
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-paper-plane"></i> </span>
+                            </div>
+                            <input name="NID" class="form-control" placeholder="NID " type="text" required>
+                            @Html.ValidationMessageFor(model => model.NID, "", new { @class = "text-danger" })
+                        </div><!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class=" fa fa-calendar-plus-o"></i> </span>
+                            </div>
+                            <input name="DateOfBirth" class="form-control" placeholder="Date of Birth " type="date" required>
+                        </div><!--  form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                            </div>
+                            <input name="Address" class="form-control" placeholder="Address " type="text" required>
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        </div><!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-intersex"></i> </span>
+                            </div>
+                            <select class="form-control" name="Gender" required>
+                                <option value="0"> Select Gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                        </div> <!-- form-group end.// -->
+
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-users"></i> </span>
+                            </div>
+                            <select class="form-control" name="UserType" id="usertype" required>
+                                <option value="0"> Select User Type</option>
+                                <option value="Travelar">Travelar</option>
+                                <option value="Tourist Guide">Tourist Guide</option>
+                                <option value="Tour Organizer">Tour Organizer</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                            @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <input name="GroupName" id="travelgroup" class="form-control" placeholder="Travel Group Name " type="text">
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input type="file" name="Image" id="Image" />
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input name="Password" class="form-control" placeholder="Create password" type="password" required>
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input name="confirmPassword" class="form-control" placeholder="Repeat password" type="password" required>
+                            @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
+                        </div> <!-- form-group// -->
+
+                        <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-success" />
+                        </div> <!-- form-group// -->
+                        <p class="text-center">
+                            Have an account? @Html.ActionLink("LogIn", "LoginForm", "Home")
+                            <br /><br /><br /> <br /> <br />
+                        </p>
+                    </form>
+
+
+                </article>
+            }
+        </div> <!-- card.// -->
+
+    </div>
+    <br /><br />
+
+</div>
+
+
+@section scripts
+{
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#usertype").change(function () {
+                var user = $("#usertype").val();
+                if (user == "Tour Organizer") {
+                    $("#travelgroup").show();;
+                }
+                else {
+                    $("#travelgroup").hide();
+                }
+
+            });
+
+        })
+    </script>
+}
